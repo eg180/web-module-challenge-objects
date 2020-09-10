@@ -101,7 +101,7 @@ const myRating = {name: "Erick", rating: 5, feedback:"I met my wife for the firs
 
 reviews[reviews.length-1].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
-console.log(reviews[7].feedback); // returns 'this place is chill with really cool people, great for getting work done on weekdays' */
+reviews[7].feedback; // returns 'this place is chill with really cool people, great for getting work done on weekdays' */
 
 
 
@@ -122,12 +122,12 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * For example, if getReviewByIndex is invoked with reviews and the number 0
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!` */
 
- 
+
 function getReviewByIndex(reviewsArray, index) {
     return reviewsArray[index].feedback;
   }
   
-console.log(getReviewByIndex(reviews, 2)); // returns "fun trivia and cool vibes"
+getReviewByIndex(reviews, 2); // returns "fun trivia and cool vibes"
 
 
 
@@ -140,9 +140,11 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(/* code here */) {
-    /* code here */
+function getLastReview(reviewsArray) {
+    return reviewsArray[reviewsArray.length-1].feedback;
   } 
+
+lastReview = getLastReview(reviews)
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
