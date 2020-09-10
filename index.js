@@ -141,7 +141,15 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
 function getLastReview(reviewsArray) {
-    return reviewsArray[reviewsArray.length-1].feedback;
+    
+  const lastArray = reviewsArray[reviewsArray.length-1];
+  const reviewersName = lastArray.name;
+  const reviewersRating = lastArray.rating;
+  const reviewersFeedback = lastArray.feedback;
+
+  console.log(`${reviewersName} gave the restaurant a ${reviewersRating} star review and their feedback was: ${reviewersFeedback}.`);
+  return `${reviewersName} gave the restaurant a ${reviewersRating} star review and their feedback was: ${reviewersFeedback}.`;
+    //reviewsArray[reviewsArray.length-1].feedback;
   } 
 
 lastReview = getLastReview(reviews)
@@ -161,8 +169,24 @@ lastReview = getLastReview(reviews)
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(reviewsArray, index) {
+    foursRatings = [];
+    threesRatings = [];
+    twosRatings = [];
+    belowTwoRatings = [];
+
+  for (let i=0; i < reviewsArray.length; i++) {
+    starRating = reviewsArray[i].rating; // get the rating for each iteration
+    review = reviewsArray[i].feedback; // get the feedback for each iteration
+
+    if (starRating > 3) {
+      foursRatings.push(review);
+    } else if (startRating > 2) {
+
+    }
+  }
+
+
   }
 
   
