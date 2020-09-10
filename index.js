@@ -147,12 +147,12 @@ function getLastReview(reviewsArray) {
   const reviewersRating = lastArray.rating;
   const reviewersFeedback = lastArray.feedback;
 
-  console.log(`${reviewersName} gave the restaurant a ${reviewersRating} star review and their feedback was: ${reviewersFeedback}.`);
+  //console.log(`${reviewersName} gave the restaurant a ${reviewersRating} star review and their feedback was: ${reviewersFeedback}.`);
   return `${reviewersName} gave the restaurant a ${reviewersRating} star review and their feedback was: ${reviewersFeedback}.`;
     //reviewsArray[reviewsArray.length-1].feedback;
   } 
 
-lastReview = getLastReview(reviews)
+lastReview = getLastReview(reviews);
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
@@ -169,27 +169,24 @@ lastReview = getLastReview(reviews)
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(reviewsArray, index) {
-    foursRatings = [];
-    threesRatings = [];
-    twosRatings = [];
-    belowTwoRatings = [];
+function getReviewByRating(reviewsArray, starRatingLookup) {
+  matchedRatings = [];
+  
 
   for (let i=0; i < reviewsArray.length; i++) {
-    starRating = reviewsArray[i].rating; // get the rating for each iteration
+ 
+    currentIterationRating = reviewsArray[i].rating; // get the rating for each iteration
     review = reviewsArray[i].feedback; // get the feedback for each iteration
 
-    if (starRating > 3) {
-      foursRatings.push(review);
-    } else if (startRating > 2) {
-
+    
+    if (Math.floor(currentIterationRating) == Math.floor(starRatingLookup)) {
+      matchedRatings.push(review);
     }
-  }
+  } return matchedRatings;
+}
 
+getReviewByRating(reviews, 4);
 
-  }
-
-  
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words. 
   
 Your function should accept: 
