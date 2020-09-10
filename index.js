@@ -213,6 +213,8 @@ and should return an array of objects.
   }
   
 getLongReviews(reviews);
+
+
 /* STRETCH 3:  This challenge is not related to the data above! 
 
 Write a function called carMarker 
@@ -229,9 +231,19 @@ The returned object should have the following characteristics:
          (1) causes the odometer in the object to be increased by the distance,
          (2) returns the updated value of the `odometer`.
 */
+/// A WORK IN PROGRESS
 
-
-function carMaker(/* code here */) {
-    /* code here */
+function carMaker(odometerReading) {
+    let newCarObject = {
+      odometer: odometerReading,
+      drive: function(distance) {
+        this.odometer += distance;
+        return newCarObject;
+      } 
+    } 
     
 }
+
+myCar = carMaker(100);
+
+console.log(myCar);
